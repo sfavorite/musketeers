@@ -1,0 +1,11 @@
+{
+    "name": "sfavorite/musketeers",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Scot Favorite",
+            "email": "scot.favorite@gmail.com"
+        }
+    ],
+    "require": {}
+}
