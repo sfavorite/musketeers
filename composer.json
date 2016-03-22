@@ -7,5 +7,10 @@
             "email": "scot.favorite@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sfavorite\\Loremenglish\\": "src/"
+        }
+    }
 }
