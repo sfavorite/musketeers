@@ -36,5 +36,9 @@
             return '<img src="https://unsplash.it/200/300/?random">';
         }
 
+        # add dimensions after the URL (800x600)
+        # https://source.unsplash.com/category/nature
+        # https://source.unsplash.com/random
+
 
     }
