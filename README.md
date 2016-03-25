@@ -34,3 +34,9 @@ alias
 ### License
 
 MIT
+
+
+uses guzzlehttp/guzzle
+
+Country codes copied from the sun/country package.
+http://github.com/lftekherSunny/Country.git
