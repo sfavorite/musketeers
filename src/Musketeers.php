@@ -6,7 +6,7 @@
 
     class Musketeers {
 
-        private $userInfo;
+        public $userInfo;
         private $countryCodes;
 
         function __construct() {
@@ -64,126 +64,126 @@
             return $output_array;
         }
 
-        public function Title() {
+        public function Title($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['name']['title'];
+            return $this->userInfo['results'][$index]['user']['name']['title'];
         }
 
-        public function FirstName() {
+        public function FirstName($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['name']['first'];
+            return $this->userInfo['results'][$index]['user']['name']['first'];
         }
 
-        public function LastName() {
+        public function LastName($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['name']['last'];
+            return $this->userInfo['results'][$index]['user']['name']['last'];
         }
 
-        public function Password() {
+        public function Password($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['password'];
+            return $this->userInfo['results'][$index]['user']['password'];
         }
 
-        public function Email() {
+        public function Email($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['email'];
+            return $this->userInfo['results'][$index]['user']['email'];
         }
 
-        public function Gender() {
+        public function Gender($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['gender'];
+            return $this->userInfo['results'][$index]['user']['gender'];
         }
 
-        public function DOB() {
+        public function DOB($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['dob'];
+            return $this->userInfo['results'][$index]['dob'];
         }
 
-        public function Street() {
+        public function Street($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['location']['street'];
+            return $this->userInfo['results'][$index]['user']['location']['street'];
         }
 
-        public function City() {
+        public function City($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['location']['city'];
+            return $this->userInfo['results'][$index]['user']['location']['city'];
         }
 
-        public function State() {
+        public function State($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['location']['state'];
+            return $this->userInfo['results'][$index]['user']['location']['state'];
         }
 
-        public function Zip() {
+        public function Zip($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['location']['zip'];
+            return $this->userInfo['results'][$index]['user']['location']['zip'];
         }
 
-        public function Phone() {
+        public function Phone($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['phone'];
+            return $this->userInfo['results'][$index]['user']['phone'];
         }
 
-        public function Cell() {
+        public function Cell($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['cell'];
+            return $this->userInfo['results'][$index]['user']['cell'];
         }
 
-        public function thumbnailPicture() {
+        public function thumbnailPicture($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['picture']['thumbnail'];
+            return $this->userInfo['results'][$index]['user']['picture']['thumbnail'];
         }
 
-        public function mediumPicture() {
+        public function mediumPicture($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['picture']['medium'];
+            return $this->userInfo['results'][$index]['user']['picture']['medium'];
         }
 
-        public function largePicture() {
+        public function largePicture($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][0]['user']['picture']['large'];
+            return $this->userInfo['results'][$index]['user']['picture']['large'];
         }
 
-        public function Nationality() {
+        public function Nationality($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
             return $this->userInfo['nationality'];
         }
 
-        public function nationName() {
+        public function nationName($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
@@ -194,40 +194,47 @@
                 echo 'An Error has accord at the network level...yeah Internet';
             }
         }
-        private function getMusketeerInfo($genderMusketeer = null, $numberMusketeer=1) {
+
+        public function getSquad($genderMusketeer = null, $numberMusketeer = 1) {
 
             $url = '';
-            $params = array();
-            $params['results'] = 1;
-
-            $client;
-            $this->client = new Client();
+            $squad = [];
 
             if (getenv('RANDOM_API_KEY')) {
                 $numberMusketeers = 1;
                 $url .= 'results=' . $numberMusketeer . "&key=" . getenv('RANDOM_API_KEY');
-                echo $url;
             }
             if ($genderMusketeer !== null) {
-                $url .= "gender=" . $genderMusketeer;
-            }
-            //$response = $this->client->request('GET', 'http://api.randomuser.me/');
-            try {
-            //$response = $this->client->request('GET', 'https://randomuser.me/api/?gender=female&results=2&key=VDL2-2U79-LH5R-KTGV');
-            $response = $this->client->request('GET', 'https://randomuser.me/api/' . $url);
-            $this->userInfo = json_decode($response->getBody(), true);
-            } catch (RequestException $e) {
-                echo 'An Error has accord at the network level...yeah Internet';
-                if ($e->hasResponse()) {
-                    echo $e->getResponse();
+                if ($url !== '') {
+                    $url .= "&gender=" . $genderMusketeer;
+                }
+                else {
+                    $url .= "gender=" . $genderMusketeer;
                 }
             }
-            /*
-            foreach ($this->userInfo['results'] as $info) {
-                echo $info['user']['name']['first'];
-                echo "<img src=" . $info['user']['picture']['large'] . " alt=\"User Picture\">";
+            $squad = $this->getMusketeerInfo($url);
+            return $this->userInfo;
+        }
+
+        private function getMusketeerInfo($url = '') {
+
+            $params = array();
+            $params['results'] = 1;
+            $this->userInfo = [];
+
+            $this->client = new Client();
+
+            try {
+                if ($url !== '') {
+                    $url = '?' . $url;
+                }
+                $response = $this->client->request('GET', 'https://randomuser.me/api/' . $url);
+                $this->userInfo = json_decode($response->getBody(), true);
+            } catch (\Exception $e) {
+                $this->userInfo = file_get_contents(__DIR__ . '/backup_musketeers.json');
+                dd($this->userInfo);
             }
-            */
+
         }
 
     }

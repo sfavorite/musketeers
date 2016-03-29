@@ -1,0 +1,39 @@
+{
+    "results": [
+        {
+            "user": {
+                "gender": "male",
+                "name": {
+                    "title": "mr",
+                    "first": "josias",
+                    "last": "lopes"
+                },
+                "location": {
+                    "street": "7016 rua são luiz",
+                    "city": "apucarana",
+                    "state": "rio de janeiro",
+                    "zip": 35548
+                },
+                "email": "josias.lopes@example.com",
+                "username": "tinyelephant862",
+                "password": "rocco",
+                "salt": "pBcdJodg",
+                "md5": "4384efdae2f2cb3a0ff013271005a049",
+                "sha1": "ff2b05629d29236cde5064ba108e75be02f31a03",
+                "sha256": "352a4782a82e0a15ed2560a40fe08e3e279ee1b49740a042f18efaf80c46c91f",
+                "registered": 1284618024,
+                "dob": 1340497986,
+                "phone": "(32) 6746-6538",
+                "cell": "(68) 0906-1300",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/men/65.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/men/65.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/65.jpg"
+                }
+            }
+        }
+    ],
+    "nationality": "BR",
+    "seed": "3449d08ce73d374901",
+    "version": "0.8"
+}
