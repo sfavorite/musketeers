@@ -201,8 +201,10 @@
             $squad = [];
 
             if (getenv('RANDOM_API_KEY')) {
-                $numberMusketeers = 1;
                 $url .= 'results=' . $numberMusketeer . "&key=" . getenv('RANDOM_API_KEY');
+            }
+            else {
+                $numberMusketeers = 1;
             }
             if ($genderMusketeer !== null) {
                 if ($url !== '') {
