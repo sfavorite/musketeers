@@ -11,15 +11,23 @@
 
         function __construct() {
 
+
             $this->userInfo = NULL;
             $this->countryCodes = require(__DIR__ . '/countries.php');
+
+            // Setup a guzzle client for our http requests
+            $this->client = new Client();
+
         }
 
 
 
-        public static function showImage()
+        public function showImage()
         {
-            return '<img src="https://unsplash.it/200/300/?random">';
+
+            //$response = $this->client->request('GET', 'https://unsplash.it/200/300/?random');
+            $response = '';
+            return $response;
         }
 
         # add dimensions after the URL (800x600)
@@ -224,6 +232,7 @@
             $params['results'] = 1;
             $this->userInfo = [];
 
+            // Setup a guzzle client for our http request
             $this->client = new Client();
 
             try {
