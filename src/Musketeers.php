@@ -24,10 +24,7 @@
 
         public function showImage()
         {
-
-            //$response = $this->client->request('GET', 'https://unsplash.it/200/300/?random');
-            $response = '';
-            return $response;
+            return "https://unsplash.it/200/300/?random";
         }
 
         # add dimensions after the URL (800x600)
