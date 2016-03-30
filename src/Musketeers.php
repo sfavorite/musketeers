@@ -24,7 +24,7 @@
 
         public function showImage()
         {
-            return "https://unsplash.it/200/300/?random";
+            return "https://unsplash.it/800/600/?random";
         }
 
         # add dimensions after the URL (800x600)
