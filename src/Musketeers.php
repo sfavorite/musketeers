@@ -73,42 +73,42 @@
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['name']['title'];
+            return $this->userInfo['results'][$index]['name']['title'];
         }
 
         public function FirstName($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['name']['first'];
+            return $this->userInfo['results'][$index]['name']['first'];
         }
 
         public function LastName($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['name']['last'];
+            return $this->userInfo['results'][$index]['name']['last'];
         }
 
         public function Password($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['password'];
+            return $this->userInfo['results'][$index]['login']['password'];
         }
 
         public function Email($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['email'];
+            return $this->userInfo['results'][$index]['email'];
         }
 
         public function Gender($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['gender'];
+            return $this->userInfo['results'][$index]['gender'];
         }
 
         public function DOB($index = 0) {
@@ -122,70 +122,70 @@
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['location']['street'];
+            return $this->userInfo['results'][$index]['location']['street'];
         }
 
         public function City($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['location']['city'];
+            return $this->userInfo['results'][$index]['location']['city'];
         }
 
         public function State($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['location']['state'];
+            return $this->userInfo['results'][$index]['location']['state'];
         }
 
         public function Zip($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['location']['zip'];
+        //    return $this->userInfo['results'][$index]['location']['zip'];
         }
 
         public function Phone($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['phone'];
+            return $this->userInfo['results'][$index]['phone'];
         }
 
         public function Cell($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['cell'];
+            return $this->userInfo['results'][$index]['cell'];
         }
 
         public function thumbnailPicture($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['picture']['thumbnail'];
+            return $this->userInfo['results'][$index]['picture']['thumbnail'];
         }
 
         public function mediumPicture($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['picture']['medium'];
+            return $this->userInfo['results'][$index]['picture']['medium'];
         }
 
         public function largePicture($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['results'][$index]['user']['picture']['large'];
+            return $this->userInfo['results'][$index]['picture']['large'];
         }
 
         public function Nationality($index = 0) {
             if (is_null($this->userInfo)) {
                 $this->getMusketeerInfo();
             }
-            return $this->userInfo['nationality'];
+            //return $this->userInfo['nat'];
         }
 
         public function nationName($index = 0) {
@@ -193,8 +193,8 @@
                 $this->getMusketeerInfo();
             }
             try {
-                $code = $this->userInfo['nationality'];
-                return $this->countryCodes[$code]['name'];
+                //$code = $this->userInfo['nationality'];
+            //    return $this->countryCodes[$code]['name'];
             } catch (Exception $e) {
                 echo 'An Error has accord at the network level...yeah Internet';
             }
